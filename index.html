@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LONDO Technology — Business Plan 2026-2030</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{--o:#FF6B35;--ol:#FF8C5A;--ob:#FFF4EE;--n:#0F172A;--nl:#1E293B;--s:#475569;--sl:#94A3B8;--gb:#F1F5F9;--w:#FFFFFF;--g:#22C55E;--r:#EF4444;--b:#3B82F6}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#000;overflow:hidden}
+.deck{width:100vw;height:100vh;position:relative}
+.slide{width:100vw;height:100vh;position:absolute;top:0;left:0;display:none;flex-direction:column;background:var(--w);overflow:hidden}
+.slide.active{display:flex}
+.slide.dark{background:var(--n);color:var(--w)}
+.slide.accent{background:var(--o);color:var(--w)}
+.nav{position:fixed;bottom:24px;right:24px;z-index:100;display:flex;gap:8px;align-items:center}
+.nav button{width:44px;height:44px;border:none;border-radius:50%;cursor:pointer;background:rgba(15,23,42,0.8);color:#fff;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;backdrop-filter:blur(8px)}
+.nav button:hover{background:var(--o);transform:scale(1.1)}
+.nav .counter{color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;background:rgba(15,23,42,0.6);padding:6px 14px;border-radius:20px;backdrop-filter:blur(8px)}
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--o);z-index:101;transition:width 0.3s}
+.sh{padding:20px 80px;display:flex;align-items:center;gap:16px;border-bottom:1px solid #E2E8F0;min-height:70px}
+.sh .tag{background:var(--o);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:4px;text-transform:uppercase;letter-spacing:1px}
+.sh .ti{font-size:15px;font-weight:600;color:var(--s)}
+.sh .lo{margin-left:auto;font-size:22px;font-weight:800;color:var(--o);letter-spacing:-0.5px}
+.sb{flex:1;padding:40px 80px;display:flex;flex-direction:column}
+h1{font-size:48px;font-weight:800;line-height:1.1;letter-spacing:-1px}
+h2{font-size:36px;font-weight:800;line-height:1.15;letter-spacing:-0.5px}
+h3{font-size:24px;font-weight:700;line-height:1.3}
+h4{font-size:18px;font-weight:700}
+.sub{font-size:18px;color:var(--s);font-weight:400;line-height:1.6;margin-top:12px}
+.at{color:var(--o)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+.g4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:20px}
+.cd{background:#FAFAFA;border-radius:12px;padding:28px;border:1px solid #E2E8F0}
+.cd.dk{background:var(--n);color:#fff;border:none}
+.cd.ok{background:var(--o);color:#fff;border:none}
+.met{text-align:center}
+.met .val{font-size:42px;font-weight:800;color:var(--o)}
+.met .lbl{font-size:13px;color:var(--s);margin-top:4px;font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:var(--n);color:#fff;padding:10px 14px;text-align:left;font-weight:600}
+td{padding:9px 14px;border-bottom:1px solid #E2E8F0}
+tr:nth-child(even){background:#F8FAFC}
+.tr{text-align:right}
+.pill{display:inline-block;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600}
+.pill.gn{background:#DCFCE7;color:#166534}
+.pill.og{background:var(--ob);color:var(--o)}
+.pill.bl{background:#DBEAFE;color:#1D4ED8}
+.gc{position:relative;overflow:hidden;background:linear-gradient(135deg,#0F172A 0%,#1E293B 100%);border-radius:16px;padding:32px;color:#fff}
+.gc::after{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,107,53,0.15)}
+.swot{display:grid;grid-template-columns:1fr 1fr;gap:2px;flex:1}
+.swot div{padding:24px}
+.swot h4{margin-bottom:12px}
+.swot ul{font-size:13px;line-height:1.8;padding-left:18px}
+.cb{background:var(--gb);border-radius:10px;padding:14px 22px;font-size:13px;font-weight:600;color:var(--n);border:1px solid #E2E8F0}
+@media print{.nav,.progress{display:none!important}.slide{display:flex!important;page-break-after:always;position:relative}body{overflow:visible}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="deck" id="deck">
+
+<!-- ===== SLIDE 1: COVER ===== -->
+<div class="slide dark active" style="justify-content:center;align-items:center;text-align:center;background:linear-gradient(135deg,#0F172A 0%,#1a1f3a 50%,#0F172A 100%)">
+  <div style="position:absolute;top:0;left:0;right:0;bottom:0;opacity:0.04;background:repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(255,107,53,0.3) 40px,rgba(255,107,53,0.3) 41px)"></div>
+  <div style="position:relative;z-index:1">
+    <div style="font-size:64px;font-weight:800;letter-spacing:-2px;margin-bottom:8px">L<span class="at">O</span>ND<span class="at">O</span></div>
+    <div style="font-size:14px;letter-spacing:6px;text-transform:uppercase;color:var(--sl);margin-bottom:60px">T E C H N O L O G Y</div>
+    <h1 style="font-size:44px;max-width:700px;margin:0 auto">Dossier de Demande de<br><span class="at">Financement</span></h1>
+    <p style="color:var(--sl);font-size:18px;margin-top:20px;font-weight:300">Business Plan 2026 — 2030</p>
+    <div style="display:flex;gap:24px;justify-content:center;margin-top:48px">
+      <div style="background:rgba(255,107,53,0.15);padding:10px 24px;border-radius:8px;font-size:13px;font-weight:600;color:var(--o)">Montant : 250 000 000 FCFA</div>
+      <div style="background:rgba(255,255,255,0.08);padding:10px 24px;border-radius:8px;font-size:13px;font-weight:500;color:var(--sl)">Mars 2026</div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:40px;font-size:12px;color:var(--sl)">LONDO Technology SARL — Douala, Cameroun &nbsp;|&nbsp; CONFIDENTIEL</div>
+</div>
+
+<!-- ===== SLIDE 2: SOMMAIRE ===== -->
+<div class="slide">
+  <div class="sh"><span class="tag">Sommaire</span><span class="ti">Vue d'ensemble</span><span class="lo">LONDO</span></div>
+  <div class="sb" style="justify-content:center">
+    <div class="g3" style="gap:16px">
+      <div onclick="goTo(2)" style="cursor:pointer;background:var(--n);border-radius:12px;padding:24px;color:#fff;transition:transform 0.2s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
+        <div style="font-size:36px;font-weight:800;color:var(--o);margin-bottom:8px">01</div>
+        <div style="font-weight:700;margin-bottom:4px">L'Entreprise</div>
+        <div style="font-size:12px;color:var(--sl)">Qui nous sommes, ADN, fondateur, certifications</div>
+      </div>
+      <div onclick="goTo(7)" style="cursor:pointer;background:var(--n);border-radius:12px;padding:24px;color:#fff;transition:transform 0.2s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
+        <div style="font-size:36px;font-weight:800;color:var(--o);margin-bottom:8px">02</div>
+        <div style="font-weight:700;margin-bottom:4px">Nos Solutions</div>
+        <div style="font-size:12px;color:var(--sl)">Fly Banking, Retail Pro, clients, revenus récurrents</div>
+      </div>
+      <div onclick="goTo(11)" style="cursor:pointer;background:var(--n);border-radius:12px;padding:24px;color:#fff;transition:transform 0.2s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
+        <div style="font-size:36px;font-weight:800;color:var(--o);margin-bottom:8px">03</div>
+        <div style="font-weight:700;margin-bottom:4px">Le Marché</div>
+        <div style="font-size:12px;color:var(--sl)">Taille, réglementation, concurrence, FFOM</div>
+      </div>
+      <div onclick="goTo(15)" style="cursor:pointer;background:var(--n);border-radius:12px;padding:24px;color:#fff;transition:transform 0.2s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
+        <div style="font-size:36px;font-weight:800;color:var(--o);margin-bottom:8px">04</div>
+        <div style="font-weight:700;margin-bottom:4px">Stratégie de Croissance</div>
+        <div style="font-size:12px;color:var(--sl)">Commerciale, géographique, objectifs</div>
+      </div>
+      <div onclick="goTo(19)" style="cursor:pointer;background:var(--n);border-radius:12px;padding:24px;color:#fff;transition:transform 0.2s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
+        <div style="font-size:36px;font-weight:800;color:var(--o);margin-bottom:8px">05</div>
+        <div style="font-weight:700;margin-bottom:4px">Besoins de Financement</div>
+        <div style="font-size:12px;color:var(--sl)">Allocation des 250M FCFA</div>
+      </div>
+      <div onclick="goTo(22)" style="cursor:pointer;background:var(--n);border-radius:12px;padding:24px;color:#fff;transition:transform 0.2s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
+        <div style="font-size:36px;font-weight:800;color:var(--o);margin-bottom:8px">06</div>
+        <div style="font-weight:700;margin-bottom:4px">Données Financières</div>
+        <div style="font-size:12px;color:var(--sl)">Historique, projections, endettement, garanties</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 3: QUI SOMMES-NOUS ===== -->
+<div class="slide">
+  <div class="sh"><span class="tag">L'Entreprise</span><span class="ti">Qui sommes-nous</span><span class="lo">LONDO</span></div>
+  <div class="sb" style="justify-content:center">
+    <div class="g2" style="align-items:center">
+      <div>
+        <h2 style="color:var(--n)">La technologie au service de la <span class="at">conformité</span> et de la <span class="at">performance</span></h2>
+        <p class="sub" style="margin-top:20px">LONDO Technology est une ESN camerounaise fondée en 2018, spécialisée dans les solutions digitales pour les <strong>établissements financiers</strong> et les <strong>industries</strong> en zone CEMAC.</p>
+        <p style="font-size:14px;color:var(--s);margin-top:16px;line-height:1.8">Nos deux plateformes — <strong>Fly Banking</strong> pour le secteur bancaire et <strong>Retail Pro</strong> pour l'industrie — accompagnent nos clients dans leur transformation digitale, leur mise en conformité réglementaire et l'optimisation de leurs opérations.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div class="cd" style="display:flex;align-items:center;gap:16px"><div style="width:48px;height:48px;border-radius:12px;background:var(--ob);display:flex;align-items:center;justify-content:center;font-size:24px">🏦</div><div><div style="font-weight:700">Pôle Banque</div><div style="font-size:13px;color:var(--s)">Conformité BEAC/COBAC, monétique GIMAC, digital banking</div></div></div>
+        <div class="cd" style="display:flex;align-items:center;gap:16px"><div style="width:48px;height:48px;border-radius:12px;background:var(--ob);display:flex;align-items:center;justify-content:center;font-size:24px">🏭</div><div><div style="font-weight:700">Pôle Industrie</div><div style="font-size:13px;color:var(--s)">Force de vente, logistique, fidélité, paiements</div></div></div>
+        <div class="cd dk" style="display:flex;align-items:center;gap:16px"><div style="width:48px;height:48px;border-radius:12px;background:rgba(255,107,53,0.2);display:flex;align-items:center;justify-content:center;font-size:24px">🌍</div><div><div style="font-weight:700">Présence : Cameroun, Congo, Tchad</div><div style="font-size:13px;color:var(--sl)">Expansion prévue : zone CEMAC complète, UEMOA, RDC (CEEAC)</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 4: NOTRE ADN ===== -->
+<div class="slide">
+  <div class="sh"><span class="tag">L'Entreprise</span><span class="ti">Notre ADN</span><span class="lo">LONDO</span></div>
+  <div class="sb" style="justify-content:center">
+    <div class="g3" style="gap:24px">
+      <div class="cd dk" style="text-align:center"><div style="font-size:36px;margin-bottom:16px">🎯</div><h4 style="margin-bottom:12px">Mission</h4><p style="font-size:14px;line-height:1.7;color:var(--sl)">Fournir aux institutions financières et industrielles d'Afrique subsaharienne des solutions digitales conformes, fiables et accessibles, pour accélérer leur transformation numérique.</p></div>
+      <div class="cd ok" style="text-align:center"><div style="font-size:36px;margin-bottom:16px">🔭</div><h4 style="margin-bottom:12px">Vision</h4><p style="font-size:14px;line-height:1.7;opacity:0.9">Devenir le partenaire technologique de référence pour la conformité bancaire et la digitalisation industrielle en Afrique francophone, en s'appuyant sur l'innovation et l'expertise réglementaire locale.</p></div>
+      <div class="cd" style="text-align:center"><div style="font-size:36px;margin-bottom:16px">💎</div><h4 style="margin-bottom:12px;color:var(--n)">Valeurs</h4><div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center"><span class="pill og">Excellence technique</span><span class="pill bl">Conformité</span><span class="pill gn">Proximité client</span><span class="pill og">Innovation</span><span class="pill bl">Souveraineté numérique</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 5: FONDATEUR ===== -->
+<div class="slide">
+  <div class="sh"><span class="tag">L'Entreprise</span><span class="ti">Présentation du fondateur</span><span class="lo">LONDO</span></div>
+  <div class="sb" style="justify-content:center">
+    <div class="g2" style="align-items:center;gap:60px">
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center">
+        <div style="width:180px;height:180px;border-radius:50%;background:linear-gradient(135deg,var(--o),var(--ol));display:flex;align-items:center;justify-content:center;font-size:56px;color:#fff;font-weight:800;margin-bottom:20px">FL</div>
+        <h3 style="color:var(--n)">Franck LIBAM MOUTNGUI</h3>
+        <p style="color:var(--o);font-weight:600;margin-top:4px">Fondateur & CEO</p>
+        <div style="display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;justify-content:center">
+          <span class="pill og">Stanford Seed 2025-26</span>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:15px;line-height:1.8;color:var(--nl);margin-bottom:20px">Ingénieur en informatique avec plus de 15 ans d'expérience, Franck a exercé comme consultant pour de grands groupes internationaux — <strong>Société Générale, BNP Paribas, Accenture, Octo Technology</strong> — avant de fonder LONDO Technology en 2018, mettant cette expertise au service du développement numérique de l'Afrique.</p>
+        <p style="font-size:15px;line-height:1.8;color:var(--nl);margin-bottom:20px">Entrepreneur engagé dans la souveraineté numérique africaine, il est actuellement participant au <strong>Stanford Seed Transformation Program</strong>, programme d'excellence réservé aux dirigeants d'entreprises à fort potentiel en Afrique — LONDO étant la seule ESN camerounaise sélectionnée parmi 2 000+ candidatures.</p>
+        <div class="cd" style="background:var(--ob);border:1px solid rgba(255,107,53,0.2)">
+          <div style="font-size:13px;font-weight:600;color:var(--o);margin-bottom:4px">Expertise clé</div>
+          <p style="font-size:13px;color:var(--nl)">Architecture SI bancaire & industrielle • Conformité BEAC/COBAC • Intégration Core Banking • Transformation digitale des entreprises • Stratégie de croissance et développement commercial</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 6: CERTIFICATIONS ===== -->
+<div class="slide">
+  <div class="sh"><span class="tag">L'Entreprise</span><span class="ti">Certifications & Accréditations</span><span class="lo">LONDO</span></div>
+  <div class="sb" style="justify-content:center">
+    <div class="g2" style="gap:40px;align-items:stretch">
+      <div class="gc" style="display:flex;flex-direction:column;justify-content:center">
+        <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--o);font-weight:700;margin-bottom:16px">Certification active</div>
+        <h2 style="font-size:32px;margin-bottom:16px">Prestataire Certifié <span style="color:var(--o)">GIMAC</span></h2>
+        <p style="font-size:14px;line-height:1.8;color:var(--sl);margin-bottom:24px">Notre plateforme d'interfaçage Core Banking est officiellement certifiée par le GIMAC pour accompagner les établissements de crédit dans l'interopérabilité monétique en zone CEMAC.</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap">
+          <div style="display:flex;align-items:center;gap:8px;font-size:13px"><span style="color:var(--g)">✓</span> Certification plateforme</div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:13px"><span style="color:var(--g)">✓</span> Recommandation active par le GIMAC</div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:13px"><span style="color:var(--g)">✓</span> Barrière d'entrée pour les concurrents</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div class="cd" style="flex:1;display:flex;flex-direction:column;justify-content:center"><div style="display:flex;align-items:center;gap:12px;margin-bottom:12px"><span class="pill gn">Active</span><span style="font-weight:700;color:var(--n)">Stanford Seed Program</span></div><p style="font-size:13px;color:var(--s);line-height:1.7">Programme de transformation pour dirigeants d'entreprises africaines à fort potentiel. Accès au réseau Stanford Business School, coaching exécutif, et accès aux réseaux de fonds de garantie et de financement.</p></div>
+        <div class="cd" style="flex:1;display:flex;flex-direction:column;justify-content:center;border:2px dashed #E2E8F0"><div style="display:flex;align-items:center;gap:12px;margin-bottom:12px"><span class="pill og">Objectif 2027</span><span style="font-weight:700;color:var(--n)">ISO 27001</span></div><p style="font-size:13px;color:var(--s);line-height:1.7">Certification en sécurité de l'information. Demandée par les établissements bancaires lors des appels d'offres. Incluse dans le plan d'investissement.</p></div>
+        <div class="cd" style="flex:1;display:flex;flex-direction:column;justify-content:center;border:2px dashed #E2E8F0"><div style="display:flex;align-items:center;gap:12px;margin-bottom:12px"><span class="pill og">Objectif 2028</span><span style="font-weight:700;color:var(--n)">PCI DSS</span></div><p style="font-size:13px;color:var(--s);line-height:1.7">Standard de sécurité des données de paiement. Indispensable pour l'expansion des modules monétiques.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 7: CHIFFRES CLÉS ===== -->
+<div class="slide dark">
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:60px 80px">
+    <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--o);font-weight:700;margin-bottom:12px">L'Entreprise</div>
+    <h2 style="margin-bottom:48px">LONDO en quelques <span class="at">chiffres</span></h2>
+    <div class="g4" style="gap:32px">
+      <div class="met"><div class="val">8</div><div class="lbl">années d'existence</div></div>
+      <div class="met"><div class="val">25</div><div class="lbl">collaborateurs</div></div>
+      <div class="met"><div class="val">301M</div><div class="lbl">FCFA de CA en 2025</div></div>
+      <div class="met"><div class="val">12</div><div class="lbl">banques clientes (dont 6 filiales Ecobank)</div></div>
+    </div>
+    <div class="g4" style="gap:32px;margin-top:40px">
+      <div class="met"><div class="val">3</div><div class="lbl">pays couverts</div></div>
+      <div class="met"><div class="val">185M</div><div class="lbl">FCFA de revenus récurrents/an</div></div>
+      <div class="met"><div class="val">0</div><div class="lbl">dette existante</div></div>
+      <div class="met"><div class="val" style="font-size:28px">GIMAC</div><div class="lbl">prestataire certifié</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 8: SOLUTIONS VUE D'ENSEMBLE ===== -->
+<div class="slide">
+  <div class="sh"><span class="tag">Nos Solutions</span><span class="ti">Portefeuille de solutions</span><span class="lo">LONDO</span></div>
+  <div class="sb" style="justify-content:center">
+    <div class="g2" style="gap:32px;align-items:stretch">
+      <div style="background:linear-gradient(135deg,#0F172A,#1E3A5F);border-radius:16px;padding:36px;color:#fff">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px"><div style="width:48px;height:48px;border-radius:12px;background:rgba(255,107,53,0.2);display:flex;align-items:center;justify-content:center;font-size:22px">🏦</div><div><h3 style="font-size:22px">Fly Banking</h3><div style="font-size:12px;color:var(--sl)">Suite bancaire de conformité & digital</div></div></div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:12px 16px;font-size:13px;display:flex;justify-content:space-between"><span>🔍 Opérations Cartes BEAC</span><span class="pill gn" style="font-size:11px">Déployé</span></div>
+          <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:12px 16px;font-size:13px;display:flex;justify-content:space-between"><span>💳 GIMAC Pay (interopérabilité)</span><span class="pill gn" style="font-size:11px">Déployé</span></div>
+          <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:12px 16px;font-size:13px;display:flex;justify-content:space-between"><span>📊 Agency Banking</span><span class="pill gn" style="font-size:11px">Déployé</span></div>
+          <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:12px 16px;font-size:13px;display:flex;justify-content:space-between"><span>📤 Transferts hors zone CEMAC</span><span class="pill og" style="font-size:11px">V2</span></div>
+          <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:12px 16px;font-size:13px;display:flex;justify-content:space-between"><span>💰 Avoirs en déshérence (COBAC N°02/25)</span><span class="pill og" style="font-size:11px">V2</span></div>
+          <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:12px 16px;font-size:13px;display:flex;justify-content:space-between"><span>🤖 IA — OCR & analyse de risques</span><span class="pill og" style="font-size:11px">V2</span></div>
+        </div>
+      </div>
+      <div style="background:linear-gradient(135deg,#FF6B35,#FF8C5A);border-radius:16px;padding:36px;color:#fff">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px"><div style="width:48px;height:48px;border-radius:12px;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:22px">🏭</div><div><h3 style="font-size:22px">Retail Pro</h3><div style="font-size:12px;opacity:0.8">Suite industrielle de distribution & vente</div></div></div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="background:rgba(255,255,255,0.15);border-radius:8px;padding:12px 16px;font-size:13px;display:flex;justify-content:space-between"><span>📋 Prise de commande digitale</span><span class="pill gn" style="font-size:11px">Déployé</span></div>
+          <div style="background:rgba(255,255,255,0.15);border-radius:8px;padding:12px 16px;font-size:13px;display:flex;justify-content:space-between"><span>🚚 Logistique & suivi livraisons</span><span class="pill gn" style="font-size:11px">Déployé</span></div>
+          <div style="background:rgba(255,255,255,0.15);border-radius:8px;padding:12px 16px;font-size:13px;display:flex;justify-content:space-between"><span>⭐ Programme de fidélité</span><span class="pill gn" style="font-size:11px">Déployé</span></div>
+          <div style="background:rgba(255,255,255,0.15);border-radius:8px;padding:12px 16px;font-size:13px;display:flex;justify-content:space-between"><span>💲 Agrégation de paiements</span><span class="pill og" style="font-size:11px">V2</span></div>
+          <div style="background:rgba(255,255,255,0.15);border-radius:8px;padding:12px 16px;font-size:13px;display:flex;justify-content:space-between"><span>🔎 Inspection & contrôle terrain</span><span class="pill og" style="font-size:11px">V2</span></div>
+          <div style="background:rgba(255,255,255,0.15);border-radius:8px;padding:12px 16px;font-size:13px;display:flex;justify-content:space-between"><span>📈 Tableaux de bord analytiques</span><span class="pill og" style="font-size:11px">V2</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 9: FLY BANKING PRICING ===== -->
+<div class="slide">
+  <div class="sh"><span class="tag">Nos Solutions</span><span class="ti">Fly Banking V2 — Modèle économique</span><span class="lo">LONDO</span></div>
+  <div class="sb" style="justify-content:center">
+    <div class="g2" style="gap:40px">
+      <div>
+        <h3 style="color:var(--n);margin-bottom:20px">Pricing <span class="at">Zone CEMAC</span></h3>
+        <table><tr><th>Composante</th><th class="tr">Montant</th></tr><tr><td><strong>Setup Fee</strong> (licence initiale)</td><td class="tr">7 — 15 M FCFA</td></tr><tr><td><strong>Module Avoirs en Déshérence</strong></td><td class="tr">3 — 5 M FCFA</td></tr><tr><td><strong>Abonnement SaaS</strong> (mensuel)</td><td class="tr">1 — 1,5 M FCFA</td></tr><tr><td><strong>Offre EMF</strong> (Microfinance)</td><td class="tr">Setup 3-5M + 400-750K/mois</td></tr></table>
+        <div style="margin-top:16px;font-size:12px;color:var(--s)">Majoration +30% en zone UEMOA | +30-40% en RDC</div>
+      </div>
+      <div>
+        <h3 style="color:var(--n);margin-bottom:20px">Avantages <span class="at">concurrentiels</span></h3>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="cd" style="padding:16px;display:flex;gap:12px;align-items:center"><span style="font-size:20px">🔒</span><div><strong style="font-size:13px">Conformité réglementaire certifiée</strong><br><span style="font-size:12px;color:var(--s)">GIMAC, BEAC, COBAC — l'un des rares acteurs industrialisés</span></div></div>
+          <div class="cd" style="padding:16px;display:flex;gap:12px;align-items:center"><span style="font-size:20px">🤖</span><div><strong style="font-size:13px">IA intégrée (OCR, analyse de risques)</strong><br><span style="font-size:12px;color:var(--s)">Catégorisation automatique des justificatifs</span></div></div>
+          <div class="cd" style="padding:16px;display:flex;gap:12px;align-items:center"><span style="font-size:20px">⚡</span><div><strong style="font-size:13px">Deadline réglementaire = urgence</strong><br><span style="font-size:12px;color:var(--s)">COBAC N°02/25 : conformité exigée au 01/09/2026</span></div></div>
+          <div class="cd" style="padding:16px;display:flex;gap:12px;align-items:center"><span style="font-size:20px">🌍</span><div><strong style="font-size:13px">Multi-pays, multi-banque</strong><br><span style="font-size:12px;color:var(--s)">Architecture conçue pour le déploiement à grande échelle</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 10: CLIENTS ===== -->
+<div class="slide">
+  <div class="sh"><span class="tag">Nos Solutions</span><span class="ti">Ils nous font confiance</span><span class="lo">LONDO</span></div>
+  <div class="sb" style="justify-content:center">
+    <div class="g3" style="gap:32px;margin-bottom:24px">
+      <div>
+        <h4 style="color:var(--n);margin-bottom:16px">🏦 Établissements financiers</h4>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div class="cb">BCI Congo <span style="color:var(--sl);font-weight:400">— Brazzaville</span></div>
+          <div class="cb">BICEC <span style="color:var(--sl);font-weight:400">— Cameroun</span></div>
+          <div class="cb">Ecobank <span style="color:var(--sl);font-weight:400">— 6 filiales CEMAC</span></div>
+          <div class="cb">AFG Bank <span style="color:var(--sl);font-weight:400">— Cameroun</span></div>
+          <div class="cb">UBA Congo <span style="color:var(--sl);font-weight:400">— Brazzaville</span></div>
+          <div class="cb">BSCA Bank <span style="color:var(--sl);font-weight:400">— Congo</span></div>
+          <div class="cb">BAC-Tchad <span style="color:var(--sl);font-weight:400">— N'Djamena</span></div>
+          <div class="cb">BCC <span style="color:var(--sl);font-weight:400">— Tchad</span></div>
+        </div>
+      </div>
+      <div>
+        <h4 style="color:var(--n);margin-bottom:16px">🏭 Industries</h4>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div class="cb">CIMENCAM <span style="color:var(--sl);font-weight:400">— Groupe Vicat</span></div>
+          <div class="cb">CIMFIG <span style="color:var(--sl);font-weight:400">— Groupe Vicat</span></div>
+          <div class="cb">Cadyst Consumer <span style="color:var(--sl);font-weight:400">— 6 filiales</span></div>
+          <div class="cb">Groupe NJS <span style="color:var(--sl);font-weight:400">— Cameroun</span></div>
+        </div>
+        <div style="margin-top:24px"><h4 style="color:var(--n);margin-bottom:12px">🏛️ Institutionnels</h4><div class="cb" style="width:fit-content">Accord cadre GIMAC</div></div>
+      </div>
+      <div>
+        <h4 style="color:var(--n);margin-bottom:16px">📊 Couverture géographique</h4>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;align-items:center;gap:10px"><span style="font-size:20px">🇨🇲</span><strong>Cameroun</strong> — Siège, production</div>
+          <div style="display:flex;align-items:center;gap:10px"><span style="font-size:20px">🇨🇬</span><strong>Congo</strong> — BCI, UBA, BSCA</div>
+          <div style="display:flex;align-items:center;gap:10px"><span style="font-size:20px">🇹🇩</span><strong>Tchad</strong> — BAC, BCC, Ecobank</div>
+        </div>
+        <div style="margin-top:24px;padding:16px;background:var(--ob);border-radius:8px">
+          <div style="font-size:13px;font-weight:600;color:var(--o)">Objectif 2027-2028</div>
+          <div style="font-size:12px;color:var(--n);margin-top:4px">Expansion zone CEMAC complète (Gabon, Guinée Éq., RCA), puis UEMOA et RDC</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 11: REVENUS RÉCURRENTS ===== -->
+<div class="slide">
+  <div class="sh"><span class="tag">Nos Solutions</span><span class="ti">Base de revenus récurrents contractualisés</span><span class="lo">LONDO</span></div>
+  <div class="sb" style="justify-content:center">
+    <div class="g2" style="gap:40px;align-items:start">
+      <div>
+        <h3 style="color:var(--n);margin-bottom:20px">Contrats de maintenance <span class="at">actifs</span></h3>
+        <table>
+          <tr><th>Client</th><th class="tr">Montant annuel</th><th>Statut</th></tr>
+          <tr><td>BCI Congo (3 solutions)</td><td class="tr">44 000 000</td><td><span class="pill gn">Actif</span></td></tr>
+          <tr><td>Revente SMS — BCI</td><td class="tr">41 213 000</td><td><span class="pill gn">Actif</span></td></tr>
+          <tr><td>CIMENCAM</td><td class="tr">26 220 000</td><td><span class="pill gn">Actif</span></td></tr>
+          <tr><td>CIMFIG</td><td class="tr">18 000 000</td><td><span class="pill gn">Actif</span></td></tr>
+          <tr><td>BICEC</td><td class="tr">5 441 000</td><td><span class="pill gn">Actif</span></td></tr>
+          <tr style="background:var(--ob)"><td>Cadyst Consumer (6 filiales)</td><td class="tr">36 000 000</td><td><span class="pill og">Déploiement</span></td></tr>
+          <tr style="background:var(--ob)"><td>Ecobank CEMAC (6 filiales)</td><td class="tr">14 000 000</td><td><span class="pill og">Déploiement</span></td></tr>
+          <tr style="background:var(--n);color:#fff"><td><strong>TOTAL</strong></td><td class="tr"><strong>184 874 000</strong></td><td></td></tr>
+        </table>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <div class="gc"><div style="font-size:42px;font-weight:800;color:var(--o)">~185M</div><div style="font-size:14px;margin-top:4px">FCFA de revenus annuels récurrents</div><div style="font-size:12px;color:var(--sl);margin-top:8px">Dont 135M déjà actifs + 50M en cours de déploiement (livraison S1 2026)</div></div>
+        <div class="cd" style="border:2px solid var(--o)">
+          <h4 style="color:var(--o);margin-bottom:8px">Solidité de la base récurrente</h4>
+          <p style="font-size:13px;color:var(--nl);line-height:1.7">Ces revenus sont <strong>contractualisés et pluriannuels</strong>. Ils couvrent à eux seuls <strong>plus de 2,5x le service annuel de la dette</strong> demandée (~73M/an). Le risque de non-remboursement est structurellement faible.</p>
+        </div>
+        <div class="cd" style="text-align:center"><div style="font-size:13px;color:var(--s);margin-bottom:8px">Part des revenus récurrents dans le CA 2025</div><div style="font-size:48px;font-weight:800;color:var(--g)">45%</div><div style="font-size:12px;color:var(--s)">Objectif post-investissement : &gt;60%</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 12: TAILLE DU MARCHÉ ===== -->
+<div class="slide dark">
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:60px 80px">
+    <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--o);font-weight:700;margin-bottom:12px">Le Marché</div>
+    <h2 style="margin-bottom:40px">Un marché de <span class="at">190+ institutions financières</span><br>en recherche de solutions de conformité</h2>
+    <div class="g3" style="gap:32px">
+      <div style="background:rgba(255,255,255,0.06);border-radius:16px;padding:32px;text-align:center"><div style="font-size:56px;font-weight:800;color:var(--o)">55-60</div><div style="font-size:16px;font-weight:600;margin-top:8px">Banques en zone CEMAC</div><div style="font-size:12px;color:var(--sl);margin-top:8px">6 pays : Cameroun, Congo, Gabon, Tchad, Guinée Éq., RCA</div><div style="margin-top:16px;background:rgba(34,197,94,0.15);padding:8px;border-radius:8px;font-size:12px;color:var(--g)">La majorité utilise encore des processus manuels</div></div>
+      <div style="background:rgba(255,255,255,0.06);border-radius:16px;padding:32px;text-align:center"><div style="font-size:56px;font-weight:800;color:var(--o)">130+</div><div style="font-size:16px;font-weight:600;margin-top:8px">Institutions en zone UEMOA</div><div style="font-size:12px;color:var(--sl);margin-top:8px">8 pays : Côte d'Ivoire, Sénégal, Mali, Bénin, Togo, etc.</div><div style="margin-top:16px;background:rgba(59,130,246,0.15);padding:8px;border-radius:8px;font-size:12px;color:var(--b)">Réalités réglementaires similaires</div></div>
+      <div style="background:rgba(255,255,255,0.06);border-radius:16px;padding:32px;text-align:center"><div style="font-size:56px;font-weight:800;color:var(--o)">100+</div><div style="font-size:16px;font-weight:600;margin-top:8px">Industries cibles CEMAC/UEMOA/RDC</div><div style="font-size:12px;color:var(--sl);margin-top:8px">Ciment, agroalimentaire, distribution, brasseries</div><div style="margin-top:16px;background:rgba(255,107,53,0.15);padding:8px;border-radius:8px;font-size:12px;color:var(--o)">Retail Pro adresse ce segment</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 13: RÉGLEMENTATION ===== -->
+<div class="slide">
+  <div class="sh"><span class="tag">Le Marché</span><span class="ti">La réglementation comme accélérateur de croissance</span><span class="lo">LONDO</span></div>
+  <div class="sb" style="justify-content:center">
+    <p style="font-size:15px;color:var(--s);margin-bottom:24px;max-width:700px">Chaque nouveau texte réglementaire de la BEAC/COBAC crée un besoin immédiat et représente un nouveau module à commercialiser.</p>
+    <div class="g3" style="gap:20px">
+      <div class="cd dk"><div style="font-size:11px;color:var(--o);font-weight:700;letter-spacing:1px;margin-bottom:12px">RÉGLEMENTATION DE CHANGE</div><h4 style="margin-bottom:8px">Opérations Cartes hors CEMAC</h4><p style="font-size:12px;color:var(--sl);line-height:1.7;margin-bottom:12px">Obligation pour les banques de suivre et justifier toutes les opérations carte effectuées hors zone. Pénalités très lourdes.</p><span class="pill gn">Module déployé — 12 banques</span></div>
+      <div class="cd" style="border:2px solid var(--o)"><div style="font-size:11px;color:var(--o);font-weight:700;letter-spacing:1px;margin-bottom:12px">COBAC N°02/25 — NOUVEAU</div><h4 style="color:var(--n);margin-bottom:8px">Avoirs en déshérence</h4><p style="font-size:12px;color:var(--s);line-height:1.7;margin-bottom:12px">Entré en vigueur le 01/09/2025. 12 mois pour se conformer. Gestion des comptes inactifs, reversement aux caisses de consignation.</p><span class="pill og">Module V2 — 55+ banques adressables</span></div>
+      <div class="cd" style="border:2px dashed #E2E8F0"><div style="font-size:11px;color:var(--b);font-weight:700;letter-spacing:1px;margin-bottom:12px">INTEROPÉRABILITÉ MONÉTIQUE</div><h4 style="color:var(--n);margin-bottom:8px">GIMAC Pay</h4><p style="font-size:12px;color:var(--s);line-height:1.7;margin-bottom:12px">Obligation d'interconnexion des systèmes monétiques. LONDO est prestataire certifié GIMAC.</p><span class="pill bl">Certification GIMAC active</span></div>
+    </div>
+    <div class="cd" style="margin-top:20px;background:var(--ob);border:1px solid rgba(255,107,53,0.2);text-align:center"><p style="font-size:14px;color:var(--n)"><strong>Chaque réglementation = marché quasi-captif.</strong> Les banques doivent se conformer sous peine de sanctions COBAC. LONDO est l'un des rares acteurs à offrir une réponse industrialisée et certifiée.</p></div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 14: FFOM ===== -->
+<div class="slide">
+  <div class="sh"><span class="tag">Le Marché</span><span class="ti">Analyse FFOM</span><span class="lo">LONDO</span></div>
+  <div class="sb" style="padding-top:20px;padding-bottom:20px">
+    <div class="swot" style="border-radius:12px;overflow:hidden;border:1px solid #E2E8F0">
+      <div style="background:#F0FDF4"><h4 style="color:#166534">✅ Forces</h4><ul style="color:#166534"><li>Certification GIMAC — barrière d'entrée unique</li><li>8 ans d'expérience en SI bancaire CEMAC</li><li>185M FCFA de revenus récurrents contractualisés</li><li>Zéro dette, gestion saine depuis la création</li><li>Stanford Seed — réseau et crédibilité</li><li>Double expertise : technique + réglementaire</li></ul></div>
+      <div style="background:#FEF2F2"><h4 style="color:#991B1B">⚠️ Faiblesses</h4><ul style="color:#991B1B"><li>Équipe technique junior, dépendance au fondateur</li><li>Absence de DAF et CTO structurants</li><li>Solutions V1 instables — dette technique</li><li>Capital social faible (5M FCFA)</li><li>Pas de pipeline commercial formalisé</li><li>Concentration client (BCI = 43% du CA)</li></ul></div>
+      <div style="background:#EFF6FF"><h4 style="color:#1D4ED8">🚀 Opportunités</h4><ul style="color:#1D4ED8"><li>COBAC N°02/25 — 55+ banques à équiper d'ici 09/2026</li><li>Expansion UEMOA et RDC — 130+ institutions</li><li>Passage au modèle SaaS — revenus prévisibles</li><li>IA comme accélérateur de productivité</li><li>Réseau Stanford Seed pour prospection et financements</li><li>Politique SND30 — soutien au numérique camerounais</li></ul></div>
+      <div style="background:#FFFBEB"><h4 style="color:#92400E">🛡️ Menaces</h4><ul style="color:#92400E"><li>Entrée possible de concurrents internationaux</li><li>Développements internes par les grandes banques</li><li>Cycles de vente longs en milieu bancaire</li><li>Risque de change et instabilité sous-régionale</li><li>Pénurie de talents tech au Cameroun</li></ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 15: STRATÉGIE COMMERCIALE ===== -->
+<div class="slide">
+  <div class="sh"><span class="tag">Stratégie</span><span class="ti">Stratégie commerciale</span><span class="lo">LONDO</span></div>
+  <div class="sb" style="justify-content:center">
+    <h3 style="color:var(--n);margin-bottom:28px">Trois axes de croissance <span class="at">complémentaires</span></h3>
+    <div class="g3" style="gap:24px">
+      <div class="cd dk" style="position:relative;overflow:hidden"><div style="font-size:72px;font-weight:800;color:rgba(255,107,53,0.1);position:absolute;top:-10px;right:10px">01</div><div style="position:relative;z-index:1"><div style="font-size:11px;color:var(--o);font-weight:700;letter-spacing:1px;margin-bottom:12px">COURT TERME — 2026</div><h4 style="margin-bottom:12px">Upsell clients existants</h4><p style="font-size:13px;color:var(--sl);line-height:1.7">Migration des 12 banques actuelles vers Fly Banking V2. Ajout des modules Transferts hors zone et Avoirs en déshérence. Passage au pricing SaaS.</p><div style="margin-top:16px;font-size:13px;font-weight:600;color:var(--o)">Impact : +100-150M FCFA</div></div></div>
+      <div class="cd dk" style="position:relative;overflow:hidden"><div style="font-size:72px;font-weight:800;color:rgba(255,107,53,0.1);position:absolute;top:-10px;right:10px">02</div><div style="position:relative;z-index:1"><div style="font-size:11px;color:var(--o);font-weight:700;letter-spacing:1px;margin-bottom:12px">MOYEN TERME — 2027</div><h4 style="margin-bottom:12px">Conquête CEMAC</h4><p style="font-size:13px;color:var(--sl);line-height:1.7">Signature de 6-10 nouvelles banques en CEMAC. Acquisition de 5+ clients industriels via Retail Pro. Pression réglementaire comme accélérateur.</p><div style="margin-top:16px;font-size:13px;font-weight:600;color:var(--o)">Impact : +300-500M FCFA</div></div></div>
+      <div class="cd dk" style="position:relative;overflow:hidden"><div style="font-size:72px;font-weight:800;color:rgba(255,107,53,0.1);position:absolute;top:-10px;right:10px">03</div><div style="position:relative;z-index:1"><div style="font-size:11px;color:var(--o);font-weight:700;letter-spacing:1px;margin-bottom:12px">LONG TERME — 2028+</div><h4 style="margin-bottom:12px">Expansion UEMOA & RDC</h4><p style="font-size:13px;color:var(--sl);line-height:1.7">Pénétration UEMOA via Ecobank et réseau Stanford Seed. Joint ventures Ghana/Nigeria. Offre EMF/Microfinance. Entrée RDC (CEEAC).</p><div style="margin-top:16px;font-size:13px;font-weight:600;color:var(--o)">Impact : +500M+ FCFA</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 16: TRAJECTOIRE ===== -->
+<div class="slide">
+  <div class="sh"><span class="tag">Stratégie</span><span class="ti">Trajectoire de croissance — 3 scénarios</span><span class="lo">LONDO</span></div>
+  <div class="sb">
+    <div style="flex:1;display:flex;gap:32px">
+      <div style="flex:2;position:relative"><canvas id="chartGrowth"></canvas></div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:16px">
+        <div class="cd" style="background:#F0FDF4;border:1px solid #BBF7D0;padding:16px"><div style="font-size:11px;font-weight:700;color:#166534;letter-spacing:1px">OPTIMISTE</div><div style="font-size:24px;font-weight:800;color:#166534">2,5 Mds</div><div style="font-size:12px;color:#166534">FCFA en 2030</div></div>
+        <div class="cd" style="background:var(--ob);border:1px solid rgba(255,107,53,0.3);padding:16px"><div style="font-size:11px;font-weight:700;color:var(--o);letter-spacing:1px">CENTRAL</div><div style="font-size:24px;font-weight:800;color:var(--o)">2,0 Mds</div><div style="font-size:12px;color:var(--o)">FCFA en 2030</div></div>
+        <div class="cd" style="background:#F1F5F9;border:1px solid #CBD5E1;padding:16px"><div style="font-size:11px;font-weight:700;color:var(--s);letter-spacing:1px">CONSERVATEUR</div><div style="font-size:24px;font-weight:800;color:var(--n)">1,2 Md</div><div style="font-size:12px;color:var(--s)">FCFA en 2030</div></div>
+        <div style="font-size:11px;color:var(--sl);line-height:1.6">Le scénario conservateur couvre le remboursement de la dette dès la 1ère année avec un DSCR &gt; 2x</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 17: OBJECTIFS STRATÉGIQUES ===== -->
+<div class="slide accent" style="justify-content:center;padding:60px 80px">
+  <h2 style="margin-bottom:40px">Objectifs stratégiques<br>2026 — 2028</h2>
+  <div class="g2" style="gap:24px">
+    <div style="background:rgba(255,255,255,0.15);border-radius:12px;padding:28px"><div style="font-size:36px;font-weight:800;margin-bottom:8px">1 Md+</div><h4 style="margin-bottom:4px">Chiffre d'affaires 2027</h4><p style="font-size:13px;opacity:0.85">Porter le CA de 301M à plus de 1 milliard FCFA grâce à la refonte produit, l'expansion commerciale et la pression réglementaire.</p></div>
+    <div style="background:rgba(255,255,255,0.15);border-radius:12px;padding:28px"><div style="font-size:36px;font-weight:800;margin-bottom:8px">60%+</div><h4 style="margin-bottom:4px">Revenus récurrents SaaS</h4><p style="font-size:13px;opacity:0.85">Passer d'un modèle projet à un modèle SaaS avec plus de 60% de revenus récurrents mensuels.</p></div>
+    <div style="background:rgba(255,255,255,0.15);border-radius:12px;padding:28px"><div style="font-size:36px;font-weight:800;margin-bottom:8px">20+</div><h4 style="margin-bottom:4px">Clients bancaires & industriels</h4><p style="font-size:13px;opacity:0.85">Tripler le portefeuille en zone CEMAC et initier la pénétration UEMOA et RDC.</p></div>
+    <div style="background:rgba(255,255,255,0.15);border-radius:12px;padding:28px"><div style="font-size:36px;font-weight:800;margin-bottom:8px">6+</div><h4 style="margin-bottom:4px">Pays couverts</h4><p style="font-size:13px;opacity:0.85">Étendre la présence opérationnelle à 6+ pays d'Afrique Centrale, de l'Ouest et RDC.</p></div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 18: ORGANIGRAMME ===== -->
+<div class="slide dark">
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:50px 80px">
+    <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--o);font-weight:700;margin-bottom:12px">Stratégie</div>
+    <h2 style="margin-bottom:32px;font-size:28px">Organisation cible <span class="at">post-investissement</span></h2>
+    <div style="text-align:center">
+      <!-- Advisory Board -->
+      <div style="display:inline-block;background:#2D5016;border-radius:10px;padding:14px 32px;font-weight:700;font-size:14px;border:1px solid #4A7A2A">Advisory Board<br><span style="font-size:12px;font-weight:400;color:#A3D977">Conseil stratégique</span></div>
+      <div style="display:flex;justify-content:center;margin:4px 0"><div style="width:2px;height:20px;background:#444"></div></div>
+      <!-- CEO row -->
+      <div style="display:flex;justify-content:center;align-items:center;gap:24px">
+        <div style="background:#444;border:1px solid #666;border-radius:10px;padding:12px 24px;font-size:13px;border-style:dashed">Assistante<br><span style="font-size:11px;color:var(--sl)">Assistanat & achats</span></div>
+        <div style="background:#8B4513;border-radius:10px;padding:16px 36px;font-weight:700;font-size:15px;border:2px solid #A0522D">CEO<br><span style="font-size:12px;font-weight:400;color:#DEB887">Direction générale</span></div>
+        <div style="background:#444;border:1px solid #666;border-radius:10px;padding:12px 24px;font-size:13px;border-style:dashed">Cabinet d'audit<br><span style="font-size:11px;color:var(--sl)">Juridique & fiscal</span></div>
+      </div>
+      <div style="display:flex;justify-content:center;margin:4px 0"><div style="width:2px;height:20px;background:#444"></div></div>
+      <!-- C-Level -->
+      <div style="display:flex;justify-content:center;gap:20px">
+        <div style="background:#0D7377;border-radius:10px;padding:14px 28px;font-weight:700;font-size:14px;text-align:center;border:1px solid #14B8A6">COO & CDO<br><span style="font-size:12px;font-weight:400;color:#5EEAD4">Delivery & ops</span><br><span style="font-size:11px;color:#FCD34D;font-weight:600">Saïd ESSIAKOU BALLA</span></div>
+        <div style="background:#0D7377;border-radius:10px;padding:14px 28px;font-weight:700;font-size:14px;text-align:center;border:1px solid #14B8A6">CMO & CCO<br><span style="font-size:12px;font-weight:400;color:#5EEAD4">Marketing & ventes</span></div>
+        <div style="background:#0D7377;border-radius:10px;padding:14px 28px;font-weight:700;font-size:14px;text-align:center;border:1px solid #14B8A6">DAF<br><span style="font-size:12px;font-weight:400;color:#5EEAD4">Admin, finance & RH</span></div>
+      </div>
+      <div style="display:flex;justify-content:center;margin:4px 0"><div style="width:2px;height:20px;background:#444"></div></div>
+      <!-- Tech team -->
+      <div style="display:flex;justify-content:center;gap:16px">
+        <div style="background:#1E3A5F;border-radius:10px;padding:12px 22px;font-size:13px;font-weight:600;border:1px solid #3B82F6">CTO<br><span style="font-size:11px;font-weight:400;color:var(--sl)">Tech & architecture</span></div>
+        <div style="background:#1E3A5F;border-radius:10px;padding:12px 22px;font-size:13px;font-weight:600;border:1px solid #3B82F6">QA / DevOps<br><span style="font-size:11px;font-weight:400;color:var(--sl)">Tests & CI/CD</span></div>
+        <div style="background:#1E3A5F;border-radius:10px;padding:12px 22px;font-size:13px;font-weight:600;border:1px solid #3B82F6">Équipes projet<br><span style="font-size:11px;font-weight:400;color:var(--sl)">Développeurs</span></div>
+      </div>
+    </div>
+    <div style="margin-top:20px;text-align:center"><div class="cd" style="display:inline-block;padding:10px 24px;background:rgba(255,107,53,0.1);border:1px solid rgba(255,107,53,0.3)"><span style="font-size:13px">Enveloppe salariale additionnelle : <strong style="color:var(--o)">33 — 50M FCFA/an</strong> (charges incluses)</span></div></div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 19: BESOINS FINANCEMENT ===== -->
+<div class="slide dark">
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:60px 80px">
+    <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--o);font-weight:700;margin-bottom:12px">Financement</div>
+    <h2 style="margin-bottom:8px">Demande de financement</h2>
+    <p style="font-size:18px;color:var(--sl);margin-bottom:40px">250 000 000 FCFA pour transformer LONDO en éditeur SaaS panafricain</p>
+    <div class="g2" style="gap:40px">
+      <div><canvas id="chartAlloc" style="max-height:320px"></canvas></div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.06);border-radius:10px;padding:16px"><div style="width:12px;height:12px;border-radius:3px;background:#FF6B35"></div><div style="flex:1"><strong>Capital Humain & Gouvernance</strong><br><span style="font-size:12px;color:var(--sl)">6 recrutements C-Level sur 24 mois</span></div><div style="font-size:18px;font-weight:800;color:var(--o)">70M</div></div>
+        <div style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.06);border-radius:10px;padding:16px"><div style="width:12px;height:12px;border-radius:3px;background:#3B82F6"></div><div style="flex:1"><strong>R&D & Refonte Produits</strong><br><span style="font-size:12px;color:var(--sl)">Fly Banking V2 + Retail Pro V2 + IA</span></div><div style="font-size:18px;font-weight:800;color:var(--b)">60M</div></div>
+        <div style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.06);border-radius:10px;padding:16px"><div style="width:12px;height:12px;border-radius:3px;background:#22C55E"></div><div style="flex:1"><strong>Fonds de Roulement (BFR)</strong><br><span style="font-size:12px;color:var(--sl)">Matelas trésorerie, décalage recrutement/revenus</span></div><div style="font-size:18px;font-weight:800;color:var(--g)">45M</div></div>
+        <div style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.06);border-radius:10px;padding:16px"><div style="width:12px;height:12px;border-radius:3px;background:#A855F7"></div><div style="flex:1"><strong>Développement Commercial</strong><br><span style="font-size:12px;color:var(--sl)">CMO, prospection CEMAC/UEMOA, marketing B2B</span></div><div style="font-size:18px;font-weight:800;color:#A855F7">45M</div></div>
+        <div style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.06);border-radius:10px;padding:16px"><div style="width:12px;height:12px;border-radius:3px;background:#F59E0B"></div><div style="flex:1"><strong>Certifications & Infra IT</strong><br><span style="font-size:12px;color:var(--sl)">ISO 27001, serveurs CI/CD, parc informatique</span></div><div style="font-size:18px;font-weight:800;color:#F59E0B">30M</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 20: CHRONOLOGIE ===== -->
+<div class="slide">
+  <div class="sh"><span class="tag">Financement</span><span class="ti">Chronologie d'utilisation des fonds</span><span class="lo">LONDO</span></div>
+  <div class="sb" style="justify-content:center">
+    <div style="display:flex;align-items:flex-start;margin-bottom:32px">
+      <div style="flex:1;text-align:center;padding-top:40px;position:relative"><div style="position:absolute;top:14px;left:50%;right:0;height:3px;background:#E2E8F0"></div><div style="width:28px;height:28px;border-radius:50%;background:var(--o);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;position:absolute;top:2px;left:50%;transform:translateX(-50%);z-index:1">M1</div><div style="font-size:13px;padding:0 8px;margin-top:16px"><strong style="display:block;font-size:14px;margin-bottom:4px">COO déjà en poste</strong>QA/DevOps en formation<br>Lancement refonte</div></div>
+      <div style="flex:1;text-align:center;padding-top:40px;position:relative"><div style="position:absolute;top:14px;left:0;right:0;height:3px;background:#E2E8F0"></div><div style="width:28px;height:28px;border-radius:50%;background:var(--o);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;position:absolute;top:2px;left:50%;transform:translateX(-50%);z-index:1">M3</div><div style="font-size:13px;padding:0 8px;margin-top:16px"><strong style="display:block;font-size:14px;margin-bottom:4px">DAF + CTO recrutés</strong>Processus financiers structurés<br>Architecture V2 définie</div></div>
+      <div style="flex:1;text-align:center;padding-top:40px;position:relative"><div style="position:absolute;top:14px;left:0;right:0;height:3px;background:#E2E8F0"></div><div style="width:28px;height:28px;border-radius:50%;background:var(--o);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;position:absolute;top:2px;left:50%;transform:translateX(-50%);z-index:1">M4</div><div style="font-size:13px;padding:0 8px;margin-top:16px"><strong style="display:block;font-size:14px;margin-bottom:4px">CMO en poste</strong>Pipeline commercial formalisé<br>Prospection CEMAC lancée</div></div>
+      <div style="flex:1;text-align:center;padding-top:40px;position:relative"><div style="position:absolute;top:14px;left:0;right:0;height:3px;background:#E2E8F0"></div><div style="width:28px;height:28px;border-radius:50%;background:var(--o);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;position:absolute;top:2px;left:50%;transform:translateX(-50%);z-index:1">M6</div><div style="font-size:13px;padding:0 8px;margin-top:16px"><strong style="display:block;font-size:14px;margin-bottom:4px">Fly Banking V2 prête</strong>Premiers upsell clients<br>Retail Pro V2 en cours</div></div>
+      <div style="flex:1;text-align:center;padding-top:40px;position:relative"><div style="position:absolute;top:14px;left:0;left:0;height:3px;background:#E2E8F0"></div><div style="width:28px;height:28px;border-radius:50%;background:var(--o);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;position:absolute;top:2px;left:50%;transform:translateX(-50%);z-index:1">M12</div><div style="font-size:13px;padding:0 8px;margin-top:16px"><strong style="display:block;font-size:14px;margin-bottom:4px">Nouvelles signatures</strong>4-6 nouveaux clients<br>Certification ISO en cours</div></div>
+    </div>
+    <div class="g2" style="gap:24px">
+      <div class="cd" style="text-align:center"><div style="font-size:13px;color:var(--s);margin-bottom:4px">Décaissement Année 1</div><div style="font-size:28px;font-weight:800;color:var(--o)">170M FCFA</div><div style="font-size:12px;color:var(--s)">Recrutements + Refonte + BFR</div></div>
+      <div class="cd" style="text-align:center"><div style="font-size:13px;color:var(--s);margin-bottom:4px">Décaissement Année 2</div><div style="font-size:28px;font-weight:800;color:var(--o)">80M FCFA</div><div style="font-size:12px;color:var(--s)">Commercial + Certifications + Expansion</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 21: PERFORMANCES HISTORIQUES ===== -->
+<div class="slide">
+  <div class="sh"><span class="tag">Données Financières</span><span class="ti">Performances historiques</span><span class="lo">LONDO</span></div>
+  <div class="sb">
+    <div style="flex:1;display:flex;gap:40px">
+      <div style="flex:1"><canvas id="chartHist"></canvas></div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
+        <h3 style="color:var(--n);margin-bottom:20px">Une croissance <span class="at">organique soutenue</span></h3>
+        <table>
+          <tr><th></th><th class="tr">2023</th><th class="tr">2024</th><th class="tr">2025</th></tr>
+          <tr><td><strong>Chiffre d'affaires</strong></td><td class="tr">178M</td><td class="tr">273M</td><td class="tr">301M</td></tr>
+          <tr><td><strong>Évolution</strong></td><td class="tr">—</td><td class="tr" style="color:var(--g)">+53%</td><td class="tr" style="color:var(--g)">+10%</td></tr>
+          <tr><td><strong>Clients actifs</strong></td><td class="tr">5</td><td class="tr">8</td><td class="tr">12+</td></tr>
+          <tr><td><strong>Revenus récurrents</strong></td><td class="tr">~50M</td><td class="tr">~80M</td><td class="tr">~135M</td></tr>
+          <tr><td><strong>Endettement</strong></td><td class="tr">0</td><td class="tr">0</td><td class="tr">0</td></tr>
+        </table>
+        <div class="cd" style="margin-top:20px;background:var(--ob)">
+          <p style="font-size:13px;color:var(--nl);line-height:1.7"><strong>+69% de croissance cumulée en 2 ans</strong> — réalisée <strong>sans aucun financement externe</strong>, avec une équipe majoritairement junior et le fondateur comme unique commercial. Le financement demandé vise à accélérer une dynamique déjà prouvée.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 22: PROJECTIONS P&L ===== -->
+<div class="slide">
+  <div class="sh"><span class="tag">Données Financières</span><span class="ti">Compte de résultat prévisionnel — Scénario central</span><span class="lo">LONDO</span></div>
+  <div class="sb" style="justify-content:center">
+    <table style="font-size:12px">
+      <tr><th style="width:30%">En millions FCFA</th><th class="tr">2026</th><th class="tr">2027</th><th class="tr">2028</th><th class="tr">2029</th><th class="tr">2030</th></tr>
+      <tr><td><strong>Chiffre d'affaires</strong></td><td class="tr"><strong>500</strong></td><td class="tr"><strong>1 000</strong></td><td class="tr"><strong>1 400</strong></td><td class="tr"><strong>1 700</strong></td><td class="tr"><strong>2 000</strong></td></tr>
+      <tr><td style="padding-left:20px">dont Fly Banking</td><td class="tr">300</td><td class="tr">600</td><td class="tr">850</td><td class="tr">1 050</td><td class="tr">1 250</td></tr>
+      <tr><td style="padding-left:20px">dont Retail Pro</td><td class="tr">170</td><td class="tr">330</td><td class="tr">450</td><td class="tr">530</td><td class="tr">600</td></tr>
+      <tr><td style="padding-left:20px">dont Autres / R&D</td><td class="tr">30</td><td class="tr">70</td><td class="tr">100</td><td class="tr">120</td><td class="tr">150</td></tr>
+      <tr><td>Charges variables (commissions, sous-traitance)</td><td class="tr">90</td><td class="tr">180</td><td class="tr">252</td><td class="tr">306</td><td class="tr">360</td></tr>
+      <tr style="background:var(--ob)"><td><strong>Marge brute</strong></td><td class="tr"><strong>410</strong></td><td class="tr"><strong>820</strong></td><td class="tr"><strong>1 148</strong></td><td class="tr"><strong>1 394</strong></td><td class="tr"><strong>1 640</strong></td></tr>
+      <tr><td>Personnel (existant + nouveaux)</td><td class="tr">155</td><td class="tr">210</td><td class="tr">280</td><td class="tr">340</td><td class="tr">400</td></tr>
+      <tr><td>Charges d'exploitation</td><td class="tr">85</td><td class="tr">110</td><td class="tr">140</td><td class="tr">160</td><td class="tr">180</td></tr>
+      <tr style="background:#F0FDF4"><td><strong>Excédent Brut d'Exploitation (EBE)</strong></td><td class="tr"><strong>170</strong></td><td class="tr"><strong>500</strong></td><td class="tr"><strong>728</strong></td><td class="tr"><strong>894</strong></td><td class="tr"><strong>1 060</strong></td></tr>
+      <tr><td>Charges financières (intérêts)</td><td class="tr">10</td><td class="tr">18</td><td class="tr">14</td><td class="tr">8</td><td class="tr">3</td></tr>
+      <tr style="background:var(--n);color:#fff"><td><strong>Résultat net estimé</strong></td><td class="tr"><strong>160</strong></td><td class="tr"><strong>482</strong></td><td class="tr"><strong>714</strong></td><td class="tr"><strong>886</strong></td><td class="tr"><strong>1 057</strong></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ===== SLIDE 23: ENDETTEMENT ===== -->
+<div class="slide">
+  <div class="sh"><span class="tag">Données Financières</span><span class="ti">Structure d'endettement</span><span class="lo">LONDO</span></div>
+  <div class="sb" style="justify-content:center">
+    <div class="g2" style="gap:40px">
+      <div>
+        <h3 style="color:var(--n);margin-bottom:20px">Hypothèses du <span class="at">crédit</span></h3>
+        <table>
+          <tr><td><strong>Montant du crédit</strong></td><td class="tr" style="font-weight:800;color:var(--o)">250 000 000 FCFA</td></tr>
+          <tr><td>Taux d'intérêt annuel</td><td class="tr">8%</td></tr>
+          <tr><td>Durée totale</td><td class="tr">60 mois (5 ans)</td></tr>
+          <tr><td>Différé partiel</td><td class="tr">12 mois</td></tr>
+          <tr><td>Période d'amortissement</td><td class="tr">48 mois</td></tr>
+          <tr><td>Mensualité pendant le différé</td><td class="tr">~1 667 000 FCFA</td></tr>
+          <tr><td>Mensualité après le différé</td><td class="tr">~6 100 000 FCFA</td></tr>
+          <tr style="background:var(--ob)"><td><strong>Service annuel max de la dette</strong></td><td class="tr"><strong>~73 000 000 FCFA</strong></td></tr>
+        </table>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <h3 style="color:var(--n);margin-bottom:4px">Capacité de <span class="at">remboursement</span></h3>
+        <canvas id="chartDSCR" style="max-height:220px"></canvas>
+        <div class="cd" style="background:var(--ob);text-align:center"><div style="font-size:13px;font-weight:600;color:var(--o)">DSCR minimum : 2,3x (scénario conservateur)</div><p style="font-size:12px;color:var(--n);margin-top:4px">Même dans le scénario le plus prudent, la capacité d'autofinancement couvre très confortablement le service de la dette</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 24: GARANTIES ===== -->
+<div class="slide dark">
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:60px 80px">
+    <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--o);font-weight:700;margin-bottom:12px">Données Financières</div>
+    <h2 style="margin-bottom:40px">Garanties & <span class="at">sûretés</span></h2>
+    <div class="g4" style="gap:20px">
+      <div class="gc" style="padding:24px">
+        <div style="font-size:11px;color:var(--o);font-weight:700;letter-spacing:1px;margin-bottom:12px">GARANTIE PRINCIPALE</div>
+        <h4 style="margin-bottom:8px">Titre Foncier</h4>
+        <div style="font-size:32px;font-weight:800;color:var(--o);margin-bottom:4px">230M+</div>
+        <div style="font-size:12px;color:var(--sl)">FCFA — revalorisation attendue à 280-350M après expertise (travaux réalisés)</div>
+      </div>
+      <div class="gc" style="padding:24px">
+        <div style="font-size:11px;color:var(--o);font-weight:700;letter-spacing:1px;margin-bottom:12px">COMPTE COURANT</div>
+        <h4 style="margin-bottom:8px">Apport fondateur</h4>
+        <div style="font-size:32px;font-weight:800;color:var(--o);margin-bottom:4px">73M</div>
+        <div style="font-size:12px;color:var(--sl)">FCFA d'injections personnelles. Incorporation au capital envisagée</div>
+      </div>
+      <div class="gc" style="padding:24px">
+        <div style="font-size:11px;color:var(--g);font-weight:700;letter-spacing:1px;margin-bottom:12px">SITUATION FINANCIÈRE</div>
+        <h4 style="margin-bottom:8px">Zéro dette</h4>
+        <div style="font-size:32px;font-weight:800;color:var(--g);margin-bottom:4px">0</div>
+        <div style="font-size:12px;color:var(--sl)">Aucun emprunt bancaire en cours. DSF à jour.</div>
+      </div>
+      <div class="gc" style="padding:24px;border:1px solid var(--o)">
+        <div style="font-size:11px;color:var(--o);font-weight:700;letter-spacing:1px;margin-bottom:12px">RÉSEAU STANFORD SEED</div>
+        <h4 style="margin-bottom:8px">Fonds de garantie</h4>
+        <div style="font-size:14px;color:var(--sl);line-height:1.7;margin-top:8px">Accès aux fonds de garantie et mécanismes de financement via le réseau d'alumni Stanford Seed et ses partenaires institutionnels</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SLIDE 25: RISQUES ===== -->
+<div class="slide">
+  <div class="sh"><span class="tag">Données Financières</span><span class="ti">Analyse des risques & mitigation</span><span class="lo">LONDO</span></div>
+  <div class="sb" style="justify-content:center">
+    <table style="font-size:13px">
+      <tr><th style="width:25%">Risque</th><th style="width:10%">Niveau</th><th style="width:35%">Mitigation</th><th style="width:30%">Résiduel</th></tr>
+      <tr><td><strong>Concentration client</strong><br><span style="font-size:11px;color:var(--s)">BCI = 43% du CA</span></td><td><span class="pill" style="background:#FEE2E2;color:#991B1B">Élevé</span></td><td>CMO dédié + diversification. Objectif : BCI &lt;25% d'ici 2028</td><td><span class="pill" style="background:#FEF3C7;color:#92400E">Moyen</span></td></tr>
+      <tr><td><strong>Dette technique</strong><br><span style="font-size:11px;color:var(--s)">Solutions V1 instables</span></td><td><span class="pill" style="background:#FEE2E2;color:#991B1B">Élevé</span></td><td>60M dédiés à la refonte. CTO + sous-traitance ciblée. IA accélérateur</td><td><span class="pill gn">Faible</span></td></tr>
+      <tr><td><strong>Dépendance au fondateur</strong></td><td><span class="pill" style="background:#FEF3C7;color:#92400E">Moyen</span></td><td>COO en poste (Saïd). DAF et CTO à recruter. CODIR structuré</td><td><span class="pill gn">Faible</span></td></tr>
+      <tr><td><strong>Cycle de vente long</strong><br><span style="font-size:11px;color:var(--s)">3-9 mois en bancaire</span></td><td><span class="pill" style="background:#FEF3C7;color:#92400E">Moyen</span></td><td>BFR de 45M. Pressions réglementaires raccourcissent les cycles</td><td><span class="pill gn">Faible</span></td></tr>
+      <tr><td><strong>Recrutement difficile</strong></td><td><span class="pill" style="background:#FEF3C7;color:#92400E">Moyen</span></td><td>CTO 3j/sem. Sous-traitance internationale. Formation interne</td><td><span class="pill" style="background:#FEF3C7;color:#92400E">Moyen</span></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ===== SLIDE 26: MERCI ===== -->
+<div class="slide dark" style="justify-content:center;align-items:center;text-align:center;background:linear-gradient(135deg,#0F172A 0%,#1a1f3a 50%,#0F172A 100%)">
+  <div style="position:absolute;top:0;left:0;right:0;bottom:0;opacity:0.04;background:repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(255,107,53,0.3) 40px,rgba(255,107,53,0.3) 41px)"></div>
+  <div style="position:relative;z-index:1">
+    <div style="font-size:64px;font-weight:800;letter-spacing:-2px;margin-bottom:48px">L<span class="at">O</span>ND<span class="at">O</span></div>
+    <h1 style="font-size:52px;margin-bottom:16px">Merci</h1>
+    <p style="font-size:20px;color:var(--sl);font-weight:300;margin-bottom:48px">pour votre attention</p>
+    <div style="display:flex;gap:40px;justify-content:center;font-size:14px;color:var(--sl)">
+      <div><div style="font-size:12px;color:var(--o);font-weight:600;margin-bottom:4px">CONTACT</div>Franck LIBAM MOUTNGUI — CEO</div>
+      <div><div style="font-size:12px;color:var(--o);font-weight:600;margin-bottom:4px">ADRESSE</div>846 Blvd du Président A. Ahidjo, Douala</div>
+      <div><div style="font-size:12px;color:var(--o);font-weight:600;margin-bottom:4px">DIGITAL</div>www.londo-technology.com</div>
+    </div>
+    <div style="margin-top:40px"><span style="font-size:12px;color:var(--sl);background:rgba(255,255,255,0.06);padding:8px 20px;border-radius:20px">LONDO Technology SARL &nbsp;|&nbsp; Stanford Seed 2025-2026 &nbsp;|&nbsp; Prestataire certifié GIMAC</span></div>
+  </div>
+</div>
+
+</div>
+<!-- NAV -->
+<div class="nav"><button onclick="prev()">◀</button><span class="counter" id="counter">1/26</span><button onclick="next()">▶</button></div>
+<script>
+let c=0;const sl=document.querySelectorAll('.slide'),t=sl.length;
+function show(n){sl.forEach(s=>s.classList.remove('active'));c=Math.max(0,Math.min(n,t-1));sl[c].classList.add('active');document.getElementById('counter').textContent=(c+1)+' / '+t;document.getElementById('progress').style.width=((c+1)/t*100)+'%'}
+function next(){show(c+1)}function prev(){show(c-1)}function goTo(n){show(n)}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();next()}if(e.key==='ArrowLeft'){e.preventDefault();prev()}if(e.key==='Home'){e.preventDefault();show(0)}if(e.key==='End'){e.preventDefault();show(t-1)}});
+let tx=0;document.addEventListener('touchstart',e=>{tx=e.changedTouches[0].screenX});document.addEventListener('touchend',e=>{const d=e.changedTouches[0].screenX-tx;if(d<-50)next();if(d>50)prev()});
+show(0);
+function initCharts(){
+  const g=document.getElementById('chartGrowth');
+  if(g)new Chart(g,{type:'bar',data:{labels:['2023','2024','2025','2026','2027','2028','2029','2030'],datasets:[{label:'Conservateur',data:[178,273,301,400,700,850,1000,1200],backgroundColor:'#94A3B8',borderRadius:4,barPercentage:0.7},{label:'Central',data:[178,273,301,500,1000,1400,1700,2000],backgroundColor:'#FF6B35',borderRadius:4,barPercentage:0.7},{label:'Optimiste',data:[178,273,301,600,1300,1800,2200,2500],backgroundColor:'#22C55E',borderRadius:4,barPercentage:0.7}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{family:'Plus Jakarta Sans',size:11},usePointStyle:true,padding:16}}},scales:{y:{beginAtZero:true,ticks:{callback:v=>v>=1000?(v/1000).toFixed(1)+'Md':v+'M',font:{size:11}},grid:{color:'#F1F5F9'}},x:{ticks:{font:{size:11}},grid:{display:false}}}}});
+  const a=document.getElementById('chartAlloc');
+  if(a)new Chart(a,{type:'doughnut',data:{labels:['Capital Humain','R&D Produits','BFR','Commercial','Certif. & Infra'],datasets:[{data:[70,60,45,45,30],backgroundColor:['#FF6B35','#3B82F6','#22C55E','#A855F7','#F59E0B'],borderWidth:0,borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,cutout:'60%',plugins:{legend:{position:'bottom',labels:{font:{family:'Plus Jakarta Sans',size:11},usePointStyle:true,padding:12}},tooltip:{callbacks:{label:c=>c.label+': '+c.parsed+'M FCFA'}}}}});
+  const d=document.getElementById('chartDSCR');
+  if(d)new Chart(d,{type:'line',data:{labels:['2026','2027','2028','2029','2030'],datasets:[{label:'DSCR Central',data:[8.5,6.8,10.0,12.2,14.5],borderColor:'#FF6B35',backgroundColor:'rgba(255,107,53,0.1)',fill:true,tension:0.4,pointRadius:5,borderWidth:2},{label:'DSCR Conservateur',data:[5.0,2.3,3.2,4.1,5.0],borderColor:'#94A3B8',borderDash:[5,5],tension:0.4,pointRadius:4,borderWidth:2},{label:'Seuil minimum (1,5x)',data:[1.5,1.5,1.5,1.5,1.5],borderColor:'#EF4444',borderDash:[10,5],pointRadius:0,borderWidth:1}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{family:'Plus Jakarta Sans',size:10},usePointStyle:true,padding:10}}},scales:{y:{beginAtZero:true,ticks:{callback:v=>v+'x',font:{size:10}},grid:{color:'#F1F5F9'}},x:{ticks:{font:{size:10}},grid:{display:false}}}}});
+  const h=document.getElementById('chartHist');
+  if(h)new Chart(h,{type:'bar',data:{labels:['2023','2024','2025','2026 (proj.)'],datasets:[{label:'Pôle Banque',data:[111,197,196,300],backgroundColor:'#0F172A',borderRadius:4},{label:'Pôle Industrie',data:[67,76,105,200],backgroundColor:'#FF6B35',borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{family:'Plus Jakarta Sans',size:11},usePointStyle:true,padding:16}}},scales:{x:{stacked:true,ticks:{font:{size:12}},grid:{display:false}},y:{stacked:true,beginAtZero:true,ticks:{callback:v=>v+'M',font:{size:11}},grid:{color:'#F1F5F9'}}}}});
+}
+if(document.readyState==='complete')initCharts();else window.addEventListener('load',initCharts);
+</script>
+</body>
+</html>
